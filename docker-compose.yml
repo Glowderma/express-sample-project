@@ -1,7 +1,8 @@
 version: "3"
 services:
   # MongoDB
-  mongodb_container:
+  mongodb:
+    container_name: mongodb
     image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -13,20 +14,25 @@ services:
 
   # Redis
   redis_server:
+    container_name: redis_server
     image: "redis"
     networks:
       - sample
 
   # API
   sample_api:
+    container_name: sample_api
     networks:
       - sample
     build: .
     ports:
       - "3000:3000"
+    volumes:
+      - api_container:/app
 
 networks:
   sample:
 
 volumes:
+  api_container:
   mongodb_data_container:

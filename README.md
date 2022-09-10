@@ -8,3 +8,4 @@
 - View running services `docker ps`
 - list volumes `docker volume ls`
 - stop call running containers `docker-compose down`
+- Enter individual container using `docker exec -it <container_name> /bin/sh`
