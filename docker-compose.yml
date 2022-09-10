@@ -22,6 +22,9 @@ services:
   # API
   sample_api:
     container_name: sample_api
+    depends_on:
+      - redis_server
+      - mongodb
     networks:
       - sample
     build: .
