@@ -9,3 +9,5 @@
 - list volumes `docker volume ls`
 - stop call running containers `docker-compose down`
 - Enter individual container using `docker exec -it <container_name> /bin/sh`
+
+More docker commands [here](https://gist.github.com/broilogabriel/76e7d181525da01b16ed1a728aa739e4)
