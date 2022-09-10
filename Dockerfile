@@ -12,7 +12,5 @@ RUN npm install
 #Copy remaining files
 COPY ./ ./
 
-RUN npm run lint
-
 #Default command
 CMD ["npm","start"]
