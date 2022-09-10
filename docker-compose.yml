@@ -1,0 +1,32 @@
+version: "3"
+services:
+  # MongoDB
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    networks:
+      - sample
+    volumes:
+      - mongodb_data_container:/data/db
+
+  # Redis
+  redis_server:
+    image: "redis"
+    networks:
+      - sample
+
+  # API
+  sample_api:
+    networks:
+      - sample
+    build: .
+    ports:
+      - "3000:3000"
+
+networks:
+  sample:
+
+volumes:
+  mongodb_data_container:
