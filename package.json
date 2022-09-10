@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "docker:build": "docker build -t sample_api .",
     "start": "node src/index.js",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint --fix src/**/*.js"
