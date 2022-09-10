@@ -1,4 +1,4 @@
-name: Build
+name: Lint
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  docker:
+  lint:
     timeout-minutes: 10
     runs-on: self-hosted
 
